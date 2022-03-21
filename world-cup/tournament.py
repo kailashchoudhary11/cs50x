@@ -66,7 +66,7 @@ def simulate_tournament(teams):
     # TODO
     while len(teams) != 1:
         teams = simulate_round(teams)
-    name = teams[0].get('name')
+    name = str(teams[0].get('name'))
     return name
 
 
