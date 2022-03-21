@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: There is a huge difference in runtime of randomly sorted text file and sorted text files which is seen in case of bubble sort
+
+sort2 uses: merge sort
+
+How do you know?: random text files are sorted at a faster rate as compared to sort1 and sort3
+
+sort3 uses: selection sort
+
+How do you know?: when the sorted text files are sorted through sort 3 the runtime of program is highest as compared to sort1 and sort2
