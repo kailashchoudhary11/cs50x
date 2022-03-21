@@ -9,8 +9,13 @@ def main():
     L = letters * 100 / words
     S = sentences * 100 / words
 
-    index = 0.0588 * L - 0.296 * S - 15.8
-    print(f"Grade: {round(index)}")
+    index = round(0.0588 * L - 0.296 * S - 15.8)
+    if index >= 16:
+        print("Grade 16+")
+    elif index < 1:
+        print("Before Grade 1")
+    else:
+        print(f"Grade: {index}")
 
 def count_letters(text):
     count = 0
