@@ -8,7 +8,14 @@ def main():
     if len(sys.argv) != 3:
         print("Usage: python FILENAME FILENAME")
 
-    
+    with open(argv[1]) as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+
+    strs = list()
+
+        for row in reader:
+            list.append()
 
     # TODO: Read database file into a variable
 
