@@ -12,7 +12,7 @@ for item in lst:
     for c in item:
         sum += int(c)
 
-for i in range(len(number) - 1, 0, -2):
+for i in range(len(number) - 1, -1, -2):
     sum += int(number[i])
 
 if sum % 10 == 0:
