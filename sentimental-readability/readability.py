@@ -1,5 +1,6 @@
 # TODO
 def main():
+    # Taking input from user
     text = input("Text: ")
 
     letters = count_letters(text)
@@ -8,7 +9,7 @@ def main():
 
     L = letters * 100 / words
     S = sentences * 100 / words
-
+    # Counting the index
     index = round(0.0588 * L - 0.296 * S - 15.8)
     if index >= 16:
         print("Grade 16+")
@@ -17,6 +18,9 @@ def main():
     else:
         print(f"Grade: {index}")
 
+# Counting letters in the text
+
+
 def count_letters(text):
     count = 0
     for letter in text:
@@ -24,6 +28,8 @@ def count_letters(text):
             count += 1
     return count
 
+
+# Counting words in the text
 def count_words(text):
     count = 0
     for letter in text:
@@ -32,6 +38,8 @@ def count_words(text):
     count += 1
     return count
 
+
+# Counting sentences in the text
 def count_sentences(text):
     count = 0
     for letter in text:
