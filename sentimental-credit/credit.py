@@ -1,5 +1,3 @@
-# TODO
-
 from cs50 import get_string
 number = get_string("Number: ")
 lst = list()
@@ -20,7 +18,7 @@ if sum % 10 == 0:
         print("VISA")
     if number.startswith(("34", "37")):
         print("AMEX")
-    if number.startswith(tuple(range(51, 56))):
+    if number.startswith(("51", "52", "53", "54", "55", "56")):
         print("MASTERCARD")
 else:
     print("INVALID")
