@@ -21,7 +21,7 @@ def main():
         next(reader)
         for row in reader:
             team = {
-                'name': row[0],
+                'team': row[0],
                 'rating': int(row[1]),
             }
             teams.append(team)
@@ -65,7 +65,7 @@ def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
     if len(teams) == 1:
-        return teams[0].get('name')
+        return teams[0].get('team')
     return simulate_tournament(simulate_round(teams))
 
 
