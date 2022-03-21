@@ -8,14 +8,44 @@ def main():
     if len(sys.argv) != 3:
         print("Usage: python FILENAME FILENAME")
 
-    with open(argv[1]) as csvfile:
-        reader = csv.reader(csvfile)
-        strs = list()
+    data = list()
+    sequence = None
+    count = dict()
+    with open(sys.argv[1]) as fhand:
+
+        reader = csv.reader(fhand)
+        heading = next(reader)
+
 
         for row in reader:
-            for item in row:
-                
-            list.append()
+            record = dict()
+            for i in range(len(row)):
+                if i > 0:
+                    record[heading[i]] = int(row[i])
+                else:
+                    record[heading[i]] = row[i]
+
+            data.append(record)
+
+    with open(sys.argv[2]) as fhand:
+        sequence = fhand.read()
+
+    for i in range(1, len(heading)):
+        count[heading[i]] = longest_match(sequence, heading[i])
+
+    for i in range(len(data)):
+        sharedKeys = set(count.keys()).intersection(data[i].keys())
+        isMatched = True
+
+        for key in sharedKeys:
+            if data[i][key] != count[key]:
+                isMatched = False
+                break
+
+        if isMatched:
+            print(data[i]['name'])
+            break
+
 
     # TODO: Read database file into a variable
 
