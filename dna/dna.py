@@ -10,9 +10,7 @@ def main():
 
     with open(argv[1]) as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)
-
-    strs = list()
+        strs = list()
 
         for row in reader:
             list.append()
