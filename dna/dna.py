@@ -13,9 +13,8 @@ def main():
         strs = list()
 
         for row in reader:
-            data = {
+            for item in row:
                 
-            }
             list.append()
 
     # TODO: Read database file into a variable
