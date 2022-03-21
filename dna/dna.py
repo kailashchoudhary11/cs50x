@@ -1,7 +1,6 @@
 import csv
 import sys
 
-
 def main():
 
     # TODO: Check for command-line usage
@@ -12,16 +11,10 @@ def main():
     sequence = None
     count = dict()
 
-
-
-
     # TODO: Read database file into a variable
     with open(sys.argv[1]) as fhand:
-
         reader = csv.reader(fhand)
         heading = next(reader)
-
-
         for row in reader:
             record = dict()
             for i in range(len(row)):
@@ -29,29 +22,31 @@ def main():
                     record[heading[i]] = int(row[i])
                 else:
                     record[heading[i]] = row[i]
-
             data.append(record)
 
     # TODO: Read DNA sequence file into a variable
+
     with open(sys.argv[2]) as fhand:
         sequence = fhand.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+
     for i in range(1, len(heading)):
         count[heading[i]] = longest_match(sequence, heading[i])
 
     # TODO: Check database for matching profiles
-    for i in range(len(data)):
-        sharedKeys = set(count.keys()).intersection(data[i].keys())
+
+    for item in data:
+        sharedKeys = set(count.keys()).intersection(item.keys())
         isMatched = True
 
         for key in sharedKeys:
-            if data[i][key] != count[key]:
+            if item[key] != count[key]:
                 isMatched = False
                 break
 
         if isMatched:
-            print(data[i]['name'])
+            print(item.get('name'))
             break
 
     return
