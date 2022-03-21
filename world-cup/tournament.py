@@ -27,6 +27,11 @@ def main():
             teams.append(team)
 
     counts = {}
+
+    for i in range(N):
+        winner = simulate_tournament(teams).get('name')
+        counts[winner] = counts.get(winner, 0) + 1
+    
     # TODO: Simulate N tournaments and keep track of win counts
 
     # Print each team's chances of winning, according to simulation
