@@ -15,7 +15,7 @@ while cents > 0:
         count += 1
     elif cents >= 0.10:
         print(cents)
-        cents = (cents - 0.1)
+        cents = round(cents - 0.1, 2)
         count += 1
     elif cents >= 0.05:
         print(cents)
