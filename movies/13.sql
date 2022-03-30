@@ -1,1 +1,1 @@
-SELECT id FROM people WHERE name = "Kevin Bacon";
+SELECT SELECT id FROM people WHERE name = "Kevin Bacon" AND birth = 1958;
