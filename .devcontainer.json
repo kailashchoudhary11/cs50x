@@ -6,11 +6,10 @@
     "ms-python.python", 
     "ms-vscode.cpptools", 
     "ms-vscode.hexeditor", 
-    "ms-vsliveshare.vsliveshare-audio", 
-    "MS-vsliveshare.vsliveshare-pack", 
+    "ms-vsliveshare.vsliveshare-pack", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:e2886a69b9a0d9a12b0012319c978981c817bb4f", 
+  "image": "ghcr.io/cs50/codespace:70301b316fda5256e88df4b182140fb9aaf4db80", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
@@ -49,9 +48,6 @@
       }
     }, 
     "editor.suggestOnTriggerCharacters": false, 
-    "experiments.override.gettingStarted.overrideCategory.ms-python.python.pythonDataScienceWelcome.when": "false", 
-    "experiments.override.gettingStarted.overrideCategory.ms-python.python.pythonWelcome.when": "false", 
-    "experiments.override.gettingStarted.overrideCategory.ms-vscode.cpptools.cppWelcome.when": "false", 
     "extensions.ignoreRecommendations": true, 
     "files.autoSave": "afterDelay", 
     "files.exclude": {
@@ -93,6 +89,7 @@
     }, 
     "terminal.integrated.sendKeybindingsToShell": true, 
     "terminal.integrated.tabs.description": "${task}${separator}${local}", 
+    "terminal.integrated.tabs.showActiveTerminal": "never", 
     "window.autoDetectColorScheme": true, 
     "workbench.colorCustomizations": {
       "editor.lineHighlightBorder": "#0000", 
