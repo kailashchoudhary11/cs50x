@@ -43,7 +43,8 @@
                     document.querySelector("#correct").addEventListener('click', function(e) {
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
-                        divTag = document.querySelector(".correctText");
+                        divTag = document.querySelector("#correctText");
+                        divTag.innertext = "Inner";
                         console.log(divTag);
                         e.preventDefault();
                     });
