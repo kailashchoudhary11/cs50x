@@ -40,8 +40,8 @@
                         incorrect = incorrects[i];
                         console.log(incorrect);
                         incorrect.addEventListener("click", function(e) {
-                            console.log(incorrect);
-                            incorrect.style.background = "red";
+                            console.log(incorrect[i]);
+                            incorrects[i].style.background = "red";
                             e.preventDefault()
                         });
                     }
