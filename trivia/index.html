@@ -30,17 +30,16 @@
                     <button class="incorrect">Manusmriti</button>
                 </form>
                 <script>
-                    document.querySelector("#correct").addEventListener('click', function() {
+                    document.querySelector("#correct").addEventListener('click', function(e) {
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
+                        e.preventDefault()
                     });
 
                     incorrects = document.querySelectorAll(".incorrect");
                     for (let i = 0; i < incorrects.length; i++) {
                         incorrect = incorrects[i];
-                        console.log(incorrect);
                         incorrect.addEventListener("click", function(e) {
-                            console.log(incorrect[i]);
                             incorrects[i].style.background = "red";
                             e.preventDefault()
                         });
