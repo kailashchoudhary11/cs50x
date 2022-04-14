@@ -43,7 +43,9 @@
                     document.querySelector("#correct").addEventListener('click', function(e) {
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
-                        e.preventDefault()
+                        divTag = document.querySelector("div");
+                        console.log(divTag);
+                        e.preventDefault();
                     });
 
                     incorrects = document.querySelectorAll(".incorrect");
@@ -52,6 +54,7 @@
                         incorrect.addEventListener("click", function(e) {
                             incorrects[i].style.background = "red";
                             incorrects[i].innertext = "Incorrect";
+
                             e.preventDefault()
                         });
                     }
