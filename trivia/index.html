@@ -34,13 +34,13 @@
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
                     });
-                    
+
                     incorrects = document.querySelectorAll(".incorrect");
                     for (let i = 0; i < incorrects.length; i++) {
                         incorrect = incorrects[i];
                         incorrect.addEventListener("click", function() {
                             incorrect.style.background = "red";
-                        }
+                        });
                     }
                 </script>
             </div>
