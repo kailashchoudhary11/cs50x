@@ -38,6 +38,7 @@
                     incorrects = document.querySelectorAll(".incorrect");
                     for (let i = 0; i < incorrects.length; i++) {
                         incorrect = incorrects[i];
+                        console.log(incorrect);
                         incorrect.addEventListener("click", function() {
                             incorrect.style.background = "red";
                         });
