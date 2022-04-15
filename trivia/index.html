@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
-        <title>Trivia!</title>
-        <script>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
             // TODO: Add code to check answers to questions
-        </script>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Trivia!</h1>
-        </div>
+    </script>
+</head>
 
-        <div class="container">
-            <div class="section">
-                <h2>Part 1: Multiple Choice </h2>
-                <hr>
-                <!-- TODO: Add multiple choice question here -->
-                <h3>
-                    श्री कृष्ण ने कौरव पांडव युद्ध के समय अर्जुन को दिया उपदेश का वर्णन कहां मिलता है।
-                </h3>
-                <form>
-                    <span id="correctText">
-                        <button id="correct">Bhagvad Geeta</button>
-                    </span>
-                    <span class="incorrectText">
-                        <button class="incorrect">Ramayan</button>
-                    </span>
-                    <span class="incorrectText">
-                        <button class="incorrect">Ved</button>
-                    </span>
-                    <span class="incorrectText">
-                        <button class="incorrect">Puran</button>
-                    </span>
-                    <span class="incorrectText">
-                        <button class="incorrect">Manusmriti</button>
-                    </span>
-                </form>
-                <script>
-                    document.querySelector("#correct").addEventListener('click', function(e) {
-                        // alert("Clicked");
-                        document.querySelector("#correct").style.background = "green";
-                        divTag = document.querySelector("#correctText");
-                        pelem = document.createElement("div");
-                        pelem.innerText = "Correct!";
-                        divTag.appendChild(pelem);
-                        console.log(divTag);
-                        e.preventDefault();
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <!-- TODO: Add multiple choice question here -->
+            <h3>
+                श्री कृष्ण ने कौरव पांडव युद्ध के समय अर्जुन को दिया उपदेश का वर्णन कहां मिलता है।
+            </h3>
+            <form>
+                <button id="correct">Bhagvad Geeta</button>
+                <button class="incorrect">Ramayan</button>
+                <button class="incorrect">Ved</button>
+                <button class="incorrect">Puran</button>
+                <button class="incorrect">Manusmriti</button>
+            </form>
+            <script>
+                document.querySelector("#correct").addEventListener('click', function (e) {
+                    // alert("Clicked");
+                    document.querySelector("#correct").style.background = "green";
+                    divTag = document.querySelector("#correctText");
+                    pelem = document.createElement("div");
+                    pelem.innerText = "Correct!";
+                    divTag.appendChild(pelem);
+                    console.log(divTag);
+                    e.preventDefault();
+                });
+
+                incorrects = document.querySelectorAll(".incorrect");
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrect = incorrects[i];
+                    incorrect.addEventListener("click", function (e) {
+                        incorrects[i].style.background = "red";
+                        incorrects[i].innertext = "Incorrect";
+                        e.preventDefault()
                     });
-
-                    incorrects = document.querySelectorAll(".incorrect");
-                    for (let i = 0; i < incorrects.length; i++) {
-                        incorrect = incorrects[i];
-                        incorrect.addEventListener("click", function(e) {
-                            incorrects[i].style.background = "red";
-                            incorrects[i].innertext = "Incorrect";
-                            e.preventDefault()
-                        });
-                    }
-                </script>
-            </div>
-
-            <div class="section">
-                <h2>Part 2: Free Response</h2>
-                <hr>
-                <!-- TODO: Add free response question here -->
-            </div>
+                }
+            </script>
         </div>
-    </body>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!-- TODO: Add free response question here -->
+        </div>
+    </div>
+</body>
+
 </html>
