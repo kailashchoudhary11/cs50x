@@ -44,7 +44,7 @@
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
                         divTag = document.querySelector("#correctText");
-                        divTag.textContent += "Inner";
+                        divTag.appendChild("<p>Correct!</p>");
                         console.log(divTag);
                         e.preventDefault();
                     });
@@ -55,7 +55,6 @@
                         incorrect.addEventListener("click", function(e) {
                             incorrects[i].style.background = "red";
                             incorrects[i].innertext = "Incorrect";
-
                             e.preventDefault()
                         });
                     }
