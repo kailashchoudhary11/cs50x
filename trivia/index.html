@@ -23,28 +23,28 @@
                     श्री कृष्ण ने कौरव पांडव युद्ध के समय अर्जुन को दिया उपदेश का वर्णन कहां मिलता है।
                 </h3>
                 <form>
-                    <div id="correctText">
+                    <span id="correctText">
                         <button id="correct">Bhagvad Geeta</button>
-                    </div>
-                    <div class="incorrectText">
+                    </span>
+                    <span class="incorrectText">
                         <button class="incorrect">Ramayan</button>
-                    </div>
-                    <div class="incorrectText">
+                    </span>
+                    <span class="incorrectText">
                         <button class="incorrect">Ved</button>
-                    </div>
-                    <div class="incorrectText">
+                    </span>
+                    <span class="incorrectText">
                         <button class="incorrect">Puran</button>
-                    </div>
-                    <div class="incorrectText">
+                    </span>
+                    <span class="incorrectText">
                         <button class="incorrect">Manusmriti</button>
-                    </div>
+                    </span>
                 </form>
                 <script>
                     document.querySelector("#correct").addEventListener('click', function(e) {
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
                         divTag = document.querySelector("#correctText");
-                        pelem = document.createElement("p");
+                        pelem = document.createElement("div");
                         pelem.innerText = "Correct!";
                         divTag.appendChild(pelem);
                         console.log(divTag);
