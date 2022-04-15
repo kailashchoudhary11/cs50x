@@ -44,7 +44,9 @@
                         // alert("Clicked");
                         document.querySelector("#correct").style.background = "green";
                         divTag = document.querySelector("#correctText");
-                        divTag.appendChild("<p>Correct!</p>");
+                        pelem = document.createElement("p");
+                        pelem.innerText = "Correct!";
+                        divTag.appendChild(pelem);
                         console.log(divTag);
                         e.preventDefault();
                     });
