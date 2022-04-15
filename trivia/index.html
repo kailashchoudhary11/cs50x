@@ -49,6 +49,10 @@
                     incorrect.addEventListener("click", function (e) {
                         incorrects[i].style.background = "red";
                         incorrects[i].innertext = "Incorrect";
+                        divTag = document.querySelector(".section > h3");
+                        pelem = document.createElement("div");
+                        pelem.innerText = "Incorrect";
+                        divTag.appendChild(pelem);
                         e.preventDefault()
                     });
                 }
