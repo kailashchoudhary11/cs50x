@@ -38,8 +38,8 @@
                     divTag = document.querySelector(".section > h3");
                     pelem = document.createElement("div");
                     pelem.innerText = "Correct!";
+                    pelem.style.color = "green";
                     divTag.appendChild(pelem);
-                    console.log(divTag);
                     e.preventDefault();
                 });
 
@@ -52,6 +52,7 @@
                         divTag = document.querySelector(".section > h3");
                         pelem = document.createElement("div");
                         pelem.innerText = "Incorrect";
+                        pelem.style.color = "red";
                         divTag.appendChild(pelem);
                         e.preventDefault()
                     });
