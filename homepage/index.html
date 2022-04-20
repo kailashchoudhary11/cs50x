@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>My Webpage</title>
+    <script>
+      window.addEventListener("load", myFunction);
+      function myFunction() {
+        console.log("Hello there!");
+        let links = document.querySelectorAll(".nav-link");
+        console.log(links);
+        for (let i = 0; i < links.length; i++) {
+          links[i].addEventListener("mousedown", () => {
+            links[i].style.color = "orange";
+          });
+        }
+      }
+    </script>
+  </head>
+
+  <body class="bg-p">
+    <nav class="navbar navbar-expand-lg navbar-light bg-lp">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >About me</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="education.html">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hobbies.html">Hobbies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="extra-curricular.html"
+                >Extracurricular</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class="mg-1">Welcome to my Home Page</h1>
+    <div class="intro">
+      <ul>
+        <li>My name is kai.</li>
+        <li>I am from Rajasthan India.</li>
+        <li>But I have been staying in pune from past 14 years.</li>
+        <li>I am an aspiring software developer.</li>
+      </ul>
+    </div>
+  </body>
+</html>

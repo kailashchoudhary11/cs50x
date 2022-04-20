@@ -1,0 +1,36 @@
+.intro > ul > li{
+    list-style: disc;
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+    padding: 0.2rem;
+}
+
+.bg-lp {
+    background-color: lightpink;
+}
+.bg-p {
+    background-color: pink;
+}
+
+.mg-1 {
+    margin: 1rem;
+}
+
+.edu {
+    margin: 1rem;
+}
+
+.edu p {
+    font-size: 1.2rem;
+}
+
+.hobbies ul li {
+    font-size: 1.3rem;
+    margin: 0.3rem;
+    color: purple;
+}
+.extra ul li {
+    font-size: 1.3rem;
+    margin: 0.3rem;
+    color: red;
+}
