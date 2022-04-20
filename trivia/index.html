@@ -8,6 +8,53 @@
     <title>Trivia!</title>
     <script>
             // TODO: Add code to check answers to questions
+            addEventListener("load", checkAnswers);
+            function checkAnswers() {
+
+                // console.log(document.querySelector(".header"));
+                document.querySelector("#correct").addEventListener('click', function (e) {
+                    document.querySelector("#correct").style.background = "green";
+                    let divTag = document.querySelector("#firstSection > h3");
+                    console.log(divTag)
+                    let pelem = document.createElement("div");
+                    pelem.innerText = "Correct!";
+                    pelem.style.color = "green";
+                    divTag.appendChild(pelem);
+                    e.preventDefault();
+                });
+
+                let incorrects = document.querySelectorAll(".incorrect");
+                for (let i = 0; i < incorrects.length; i++) {
+                    let incorrect = incorrects[i];
+                    incorrect.addEventListener("click", function (e) {
+                        incorrects[i].style.background = "red";
+                        incorrects[i].innertext = "Incorrect";
+                        divTag = document.querySelector(".section > h3");
+                        pelem = document.createElement("div");
+                        pelem.innerText = "Incorrect";
+                        pelem.style.color = "red";
+                        divTag.appendChild(pelem);
+                        e.preventDefault()
+                    });
+                }
+                document.querySelector("#submitAnswer").addEventListener("click", function(e) {
+                    let answer = document.getElementById("answer");
+                    if (answer.value == "one") {
+                        answer.style.backgroundColor = "green";
+                        let correctAns = document.createElement("div");
+                        correctAns.innerText = "Correct!";
+                        correctAns.style.color = "green";
+                        document.querySelector("#secondSection > h3").appendChild(correctAns);
+                    } else {
+                        answer.style.backgroundColor = "red";
+                        let incorrectAns = document.createElement("div");
+                        incorrectAns.innerText = "Incorrect";
+                        incorrectAns.style.color = "Red";
+                        document.querySelector("#secondSection > h3").appendChild(incorrectAns);
+                    }
+                    e.preventDefault();
+                });
+            }
     </script>
 </head>
 
@@ -17,7 +64,7 @@
     </div>
 
     <div class="container">
-        <div class="section">
+        <div class="section" id="firstSection">
             <h2>Part 1: Multiple Choice </h2>
             <hr>
             <!-- TODO: Add multiple choice question here -->
@@ -31,46 +78,19 @@
                 <button class="incorrect">Puran</button>
                 <button class="incorrect">Manusmriti</button>
             </form>
-            <script>
-                document.querySelector("#correct").addEventListener('click', function (e) {
-                    // alert("Clicked");
-                    document.querySelector("#correct").style.background = "green";
-                    divTag = document.querySelector(".section > h3");
-                    pelem = document.createElement("div");
-                    pelem.innerText = "Correct!";
-                    pelem.style.color = "green";
-                    divTag.appendChild(pelem);
-                    e.preventDefault();
-                });
-
-                incorrects = document.querySelectorAll(".incorrect");
-                for (let i = 0; i < incorrects.length; i++) {
-                    incorrect = incorrects[i];
-                    incorrect.addEventListener("click", function (e) {
-                        incorrects[i].style.background = "red";
-                        incorrects[i].innertext = "Incorrect";
-                        divTag = document.querySelector(".section > h3");
-                        pelem = document.createElement("div");
-                        pelem.innerText = "Incorrect";
-                        pelem.style.color = "red";
-                        divTag.appendChild(pelem);
-                        e.preventDefault()
-                    });
-                }
-            </script>
         </div>
 
-        <div class="section">
+        <div class="section" id="secondSection">
             <h2>Part 2: Free Response</h2>
             <hr>
+            <!-- TODO: Add free response question here -->
             <h3>
                 This is a question to be answered.
             </h3>
             <form>
-                <input type="text" autocomplete="off" autofocus >
-                <button type="submit">Submit</button>
+                <input type="text" autocomplete="off" autofocus id="answer">
+                <button type="submit" id="submitAnswer">Submit</button>
             </form>
-            <!-- TODO: Add free response question here -->
         </div>
     </div>
 </body>
