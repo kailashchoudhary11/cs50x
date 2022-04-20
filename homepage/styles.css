@@ -1,4 +1,18 @@
 ul li a{
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+ul li {
+    list-style: none;
+    display: inline;
+    border: 2px solid red;
+    padding: 4px;
+    margin: 10px;
+    background: black;
+    color: white;
+}
+
+nav {
+    background: grey;
 }
