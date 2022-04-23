@@ -1,3 +1,18 @@
+
+#update, #delete {
+    color: black;
+    margin-left: 4px;
+    border: 1px solid black;
+    background-color: #d9edff;
+    border-radius: 4px;
+    padding: 4px;
+}
+#update:hover, #delete:hover {
+    cursor: pointer;
+    background-color: #add6fa;
+
+}
+
 body {
     background-color: #fff;
     color: #212529;
