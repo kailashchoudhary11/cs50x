@@ -5,18 +5,25 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/sell" method="post">
-        <div class="mb-3">
-            <select name="symbol" id="symbol">
-                <option value="select">select</option>
-                {% for symbol in symbols %}
-                <option value="{{ symbol['symbol'] }}">{{ symbol['symbol'] }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" required type="number">
-        </div>
-        <button class="btn btn-primary" type="submit">Sell</button>
-    </form>
+
+{% if symbols %}
+
+
+<form action="/sell" method="post">
+    <div class="mb-3">
+        <select name="symbol" id="symbol">
+            <option value="select">select</option>
+            {% for symbol in symbols %}
+            <option value="{{ symbol['symbol'] }}">{{ symbol['symbol'] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" required type="number">
+    </div>
+    <button class="btn btn-primary" type="submit">Sell</button>
+</form>
+{% else %}
+<p>First buy some stocks to sell!</p>
+{% endif %}
 {% endblock %}
