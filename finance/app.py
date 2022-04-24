@@ -52,7 +52,7 @@ def index():
         for stock in stocks:
             quote = lookup(symbol=stock['symbol'])
             quote['shares'] = stock['shares']
-            quote['total'] = (quote['shares'] * quote['price']) 
+            quote['total'] = (quote['shares'] * quote['price'])
             quote['price'] = usd(quote['price'])
             quotes.append(quote)
         total = 0
@@ -60,7 +60,7 @@ def index():
             total += quote['total']
             quote['total'] = usd(quote['total'])
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session['user_id'])[0]['cash']
-    total += cash 
+    total += cash
     total = usd(total)
     cash = usd(cash)
     return render_template("index.html", quotes=quotes, total = total, cash = cash)
@@ -86,7 +86,7 @@ def buy():
             return apology("You don't have enough balance to buy stocks")
         current_cash = cash - total_price
         db.execute("UPDATE users SET cash = ? WHERE id = ?", current_cash, session["user_id"])
-        current_date = datetime.now() 
+        current_date = datetime.now()
         db.execute("INSERT INTO buy(price, user_id, symbol, date, share, category) VALUES(?, ?, ?, ?, ?, 'bought')", price, session['user_id'], symbol, current_date, shares)
         current_shares = db.execute("SELECT shares FROM stocks WHERE user_id = ? AND symbol = ?", session['user_id'], symbol)
         if len(current_shares) == 0:
@@ -94,7 +94,7 @@ def buy():
         else:
             db.execute("UPDATE stocks SET shares = ? WHERE user_id = ? AND symbol = ?", current_shares + shares, session['user_id'], symbol)
         return redirect('/')
-            
+
     return render_template("buy.html")
 
 @app.route("/history")
@@ -177,19 +177,19 @@ def register():
     """Register user"""
 
     if request.method == "POST":
-        userName = request.form.get("username") 
+        userName = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         user = db.execute("SELECT * FROM users WHERE username = ?", userName)
         if userName == "" or len(user) != 0:
-            return apology("Username already exists", 404)
+            return apology("Username already exists")
         if password == "" or confirmation == "" or password != confirmation:
-            return apology("Passwords do not match", 403)
-        
+            return apology("Passwords do not match")
+
         hashed_password = generate_password_hash(password)
         db.execute("INSERT INTO users(username, hash) VALUES(?, ?)", userName, hashed_password)
         return redirect("/login")
-    
+
     return render_template("register.html")
 
 
