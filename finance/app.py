@@ -169,9 +169,9 @@ def quote():
         if not symbol:
             return apology("Please Enter valid symbol!")
         quote = lookup(symbol)
-        quote['price'] = usd(quote['price'])
         if quote is None:
             return apology("Please Enter valid symbol!")
+        quote['price'] = usd(quote['price'])
         return render_template("quoted.html", quote=quote)
     # GET request
     return render_template("quote.html")
