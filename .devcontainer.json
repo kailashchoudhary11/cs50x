@@ -7,9 +7,10 @@
     "ms-vscode.cpptools", 
     "ms-vscode.hexeditor", 
     "ms-vsliveshare.vsliveshare-pack", 
+    "tomoki1207.pdf", 
     "vsls-contrib.gitdoc"
   ], 
-  "image": "ghcr.io/cs50/codespace:87792e4910299fab7f38e22bf276034bc8220b53", 
+  "image": "ghcr.io/cs50/codespace:96f79e22540980ba2429b3ca051314f82bc265c6", 
   "postCreateCommand": "/opt/cs50/bin/postCreateCommand", 
   "settings": {
     "C_Cpp.autocomplete": "Disabled", 
@@ -78,6 +79,7 @@
       "workbench.action.toggleSidebarVisibility"
     ], 
     "terminal.integrated.defaultProfile.linux": "bash", 
+    "terminal.integrated.persistentSessionReviveProcess": "never", 
     "terminal.integrated.profiles.linux": {
       "JavaScript Debug Terminal": null, 
       "bash": {
