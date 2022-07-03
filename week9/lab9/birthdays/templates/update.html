@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Birthday</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+
+            <h2>Update Birthday</h2>
+            <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+            <form action="/update" method="post">
+                <input type="hidden" value="{{ birthday[0]['id'] }}" name="id">
+                <input type="text" autofocus autocomplete="off" value="{{ birthday[0]['name'] }}" placeholder="Name" name="name" required>
+                <input type="number" max="12" min="1" value="{{ birthday[0]['month'] }}" name="month" placeholder="Month" required>
+                <input type="number" max="31" min="1" value="{{ birthday[0]['day'] }}" name="day" placeholder="Day" required>
+                <input type="submit" value="Update Birthday">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

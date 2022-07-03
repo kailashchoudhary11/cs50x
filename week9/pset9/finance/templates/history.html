@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    quote
+{% endblock %}
+
+{% block main %}
+
+{% if rows %}
+    
+
+<table>
+    <thead>
+        <tr>
+            <th>Bought/Sold</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr>
+            <td>
+                {{ row['category'] }}
+            </td>
+            <td>
+                {{ row['symbol'] }}
+            </td>
+            <td>
+                {{ row['price'] }}
+            </td>
+            <td>
+                {{ row['share'] }}
+            </td>
+            <td>
+                {{ row['date'] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No History</p>
+{% endif %}
+{% endblock %}
